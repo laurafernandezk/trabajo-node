@@ -1,0 +1,21 @@
+<div class="my-class" *ngIf="show">
+<table>
+	<thead>
+	<tr>
+		<th>Nombre </th>
+		<th>Costo</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr *ngFor="let producto of productos">
+		<td>{{producto.nombre}}</td>
+		<td>{{producto.costo | currency}}</td>
+	</tr>
+	<tr>
+	</tbody>
+</table>
+</div>
+<div class="my-class" *ngIf="show===false">
+	<h4>no hay productos para mostrar</h4>
+</div>
+<button (click)="clicker()"mat-raised-button color="warn">{{show?"Ocultar":"Mostrar"}}</button>
